@@ -1,0 +1,18 @@
+.show-correct,
+.show-wrong {
+  margin-left: 15px;
+  display: none;
+}
+
+.show-message {
+  display: none;
+}
+
+.show-correct {
+  color: green;
+}
+
+.show-wrong,
+.show-message {
+  color: red;
+}

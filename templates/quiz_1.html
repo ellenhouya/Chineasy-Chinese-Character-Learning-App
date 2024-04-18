@@ -1,0 +1,50 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='quiz_1.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <p>{{quiz.question}}</p>
+  <form>
+    {% for option in quiz.options %}
+    <div class="option">
+      <input
+        type="radio"
+        id="option{{ loop.index }}"
+        name="options"
+        value="{{ loop.index }}"
+      />
+      <label for="option{{ loop.index }}">{{ loop.index }}. {{ option }}</label>
+      <span class="show-correct">Correct!</span>
+      <span class="show-wrong">
+        Wrong answer. The character you chose ({{quiz.options[loop.index - 1]}})
+        means "{{quiz.optionMeaning[loop.index - 1]}}." "{{quiz.keyWord}}" is
+        {{quiz.correctCharacter}}.
+      </span>
+    </div>
+    {% endfor %}
+
+    <div class="show-message">Please select an option before proceeding.</div>
+    <div class="btns-con">
+      <button id="submit">Check Answer</button>
+      <button id="nextButton">next</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  let quiz = {{quiz|tojson}}
+  let id = {{id|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='quiz_1.js') }}"></script>
+
+{% endblock %}

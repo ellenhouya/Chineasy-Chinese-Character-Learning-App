@@ -1,0 +1,95 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='learn.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<!-- <div class="entryTimestamp">
+  You accessed this page at {{character_to_learn.entryTimestamp}}
+</div> -->
+
+<div class="container">
+  <div class="character-info">
+    {% if character_to_learn.Chinese|length == 2 %}
+    <div class="word">
+      Combine {{character_to_learn.Chinese[0]}} and
+      {{character_to_learn.Chinese[1]}} into the word
+    </div>
+    {% endif %}
+
+    <h2>{{ character_to_learn.Chinese }}：{{character_to_learn.English}}</h2>
+    <div class="pronunciation-con">
+      <div class="pinyin">{{ character_to_learn.pinyin }}</div>
+      <audio controls>
+        <source
+          src="/static/audios/{{character_to_learn.audio}}"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="char-evolution-con">
+    <p class="char-evolution-title">Character Evolution</p>
+    <div class="evolution-con">
+      {% for image in character_to_learn.evolutionImages %}
+
+      <img
+        src="/static/images/{{character_to_learn.Chinese}}/{{image}}"
+        alt=""
+      />
+
+      {% if not loop.last %}
+
+      <img class="right-arrow" src="/static/images/right-arrow.png" alt="" />
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+
+  {% if character_to_learn.Chinese == "菜" %}
+  <div class="description">*grabbing vegetables with hands</div>
+  {% endif %} {% if character_to_learn.Chinese == "大" %}
+  <div class="description">
+    *The person stretching out both arms appears larger
+  </div>
+  {% endif %} {% if character_to_learn.Chinese == "小" %}
+  <div class="description">*Three grains of rice are still small</div>
+  {% endif %}
+
+  <div class="char-stroke-video-con">
+    {% if character_to_learn.video %}
+    <p class="char-stroke-title">Recognize the character stroke by stroke</p>
+
+    <div class="video-btns-con">
+      <video controls>
+        <source
+          src="/static/videos/{{character_to_learn.video}}"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="btns-con">
+  <button class="previous-btn">Previous</button>
+  <button class="next-btn">Next</button>
+</div>
+
+<script>
+  let character_to_learn = {{character_to_learn|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='learn.js') }}"></script>
+
+{% endblock %}

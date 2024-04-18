@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='layout.css')}}"
+    />
+
+    {% block head %}
+
+    <title>Chineasy</title>
+
+    {% endblock %}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="nav-con">
+        <nav class="nav-bar">
+          <div class="brand">Chineasy</div>
+          <ul>
+            <li>
+              <a href="/">Home<i class="home-link"></i></a>
+            </li>
+
+            <li>
+              <a href="/learn/1">Learn<i class="learn-link"></i></a>
+            </li>
+
+            <li>
+              <a href="/quiz_1/1">Quiz<i class="quiz-link"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

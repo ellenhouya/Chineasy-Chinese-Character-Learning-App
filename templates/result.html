@@ -1,0 +1,46 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='result.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="score">Your score: {{total_correct}}/15</div>
+  <div class="knowledge">
+    <h2>What you know</h2>
+    <ul>
+      {% for question in correct_questions %}
+      <li>{{ question }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="review">
+    <h2>What you should review</h2>
+    <ul>
+      {% for question in incorrect_questions %}
+      <li>{{ question }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="btns-con">
+    <button id="retry-quiz-btn">Retry Quiz</button>
+    <button id="home-btn">Homepage</button>
+  </div>
+</div>
+
+<script>
+  let total_correct = {{total_correct|tojson}}
+  let correct_questions = {{correct_questions|tojson}}
+  let incorrect_questions = {{incorrect_questions|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='result.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+.nav-con {
+  color: #000;
+  background-color: rgb(58, 57, 57);
+  width: 100%;
+}
+
+.nav-bar {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  color: #fff;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.nav-bar ul li {
+  margin-right: 25px;
+  font-size: 18px;
+}
+
+.nav-bar ul li a {
+  color: #fff;
+}

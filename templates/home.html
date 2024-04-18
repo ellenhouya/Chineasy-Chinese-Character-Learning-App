@@ -1,0 +1,30 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to Chineasy</h1>
+        <p class="lead">
+          Master essential Chinese food vocabulary from ingredients to portions.
+        </p>
+        <hr class="my-4" />
+        <p>Start your journey to fluency today!</p>
+        <a class="btn btn-primary btn-lg" href="/learn/1" role="button"
+          >Get Started</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script></script>
+
+<script src="{{ url_for('static', filename='home.js') }}"></script>
+
+{% endblock %}
