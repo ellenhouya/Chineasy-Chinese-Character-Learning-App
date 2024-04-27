@@ -1,0 +1,54 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='home.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="layer"></div>
+
+<div class="con">
+  <div class="welcome-content">
+    <!-- <div class="col-md-8 offset-md-2"> -->
+    <div>
+      <h2 class="brand-name display-4">
+        Welcome to
+        <div class="chineasy eng"></div>
+      </h2>
+      <p class="lead">
+        Master essential Chinese food vocabulary from ingredients to portions
+      </p>
+      <hr class="my-4" />
+
+      <div class="section-con">
+        <a class="start-con" href="/learn/1">
+          <img class="learning-icon" src="/static/images/learning.png" alt="" />
+          <div class="link-text">Start learning</div>
+        </a>
+
+        <a class="start-con test-con" href="/quiz_1/1">
+          <img class="learning-icon" src="/static/images/test.png" alt="" />
+          <div class="link-text">Test yourself</div>
+        </a>
+      </div>
+    </div>
+    <!-- </div> -->
+  </div>
+  <canvas id="canvas"></canvas>
+</div>
+
+<div class="fun">
+  <div>This is fun!</div>
+</div>
+
+<script></script>
+
+<script src="{{ url_for('static', filename='home.js') }}"></script>
+
+{% endblock %}

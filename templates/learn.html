@@ -1,0 +1,152 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='learn.css') }}"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='swiper.min.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<!-- <div class="entryTimestamp">
+  You accessed this page at {{character_to_learn.entryTimestamp}}
+</div> -->
+
+<div class="container learning-con">
+  <div class="character-info">
+    <div class="word">
+      Combine {{character_to_learn.Chinese[0]}} and
+      {{character_to_learn.Chinese[1]}} into the word
+    </div>
+
+    <h2>{{ character_to_learn.Chinese }}：{{character_to_learn.English}}</h2>
+    <div class="pronunciation-con">
+      <div class="pinyin">{{ character_to_learn.pinyin }}</div>
+      <audio controls>
+        <source
+          src="/static/audios/{{character_to_learn.audio}}"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <div class="char-evolution-con">
+    <p class="char-evolution-title">Character Evolution</p>
+    <div class="evolution-con">
+      {% for image in character_to_learn.evolutionImages %}
+
+      <img
+        src="/static/images/{{character_to_learn.Chinese}}/{{image}}"
+        alt=""
+      />
+
+      {% if not loop.last %}
+
+      <img class="right-arrow" src="/static/images/right-arrow.png" alt="" />
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+
+  {% if character_to_learn.Chinese == "菜" %}
+  <div class="description">*grabbing vegetables with hands</div>
+  {% endif %} {% if character_to_learn.Chinese == "大" %}
+  <div class="description">
+    *The person stretching out both arms appears larger
+  </div>
+  {% endif %} {% if character_to_learn.Chinese == "小" %}
+  <div class="description">*Three grains of rice are still small</div>
+  {% endif %}
+
+  <div class="char-stroke-video-con">
+    {% if character_to_learn.video %}
+    <p class="char-stroke-title">Recognize the character stroke by stroke</p>
+
+    <div class="video-btns-con">
+      <video controls>
+        <source
+          src="/static/videos/{{character_to_learn.video[0]}}"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      {% if character_to_learn.video[1] %}
+      <video controls>
+        <source
+          src="/static/videos/{{character_to_learn.video[1]}}"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      {% endif %} {% endif %}
+    </div>
+  </div>
+
+  <div class="character-review-title">Choose a character to review</div>
+</div>
+
+<div class="btns-con">
+  <button class="previous-btn">Previous</button>
+  <button class="next-btn">Next</button>
+</div>
+
+<div class="swiper-container slides-con">
+  <div class="swiper-wrapper">
+    <!-- <a class="swiper-slide" href="/learn/6">
+      <div class="slide-character-chi">測試</div>
+      <div class="slide-character-eng">water</div>
+    </a> -->
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="{{ url_for('static', filename='swiper.min.js') }}"></script>
+
+<script>
+  let character_to_learn = {{character_to_learn|tojson}}
+  let data = {{characters|tojson}}
+
+  // var  swiper = new Swiper(".swiper-container", {
+  //   effect: "coverflow",
+  //   grabCursor: true,
+  //   centeredSlides: true,
+  //   slidesPerView: "auto",
+  //   coverflowEffect: {
+  //     rotate: 5,
+  //     stretch: 0,
+  //     depth: 5,
+  //     modifier: 0,
+  //     slideShadows: true,
+  //   },
+  //   pagination: {
+  //     el: ".swiper-pagination",
+  //   },
+
+  //   on: {
+  //     slideChange: function () {
+  //       // Remove the 'current-slide' class from all slides
+  //       $(".swiper-slide").removeClass("current-slide");
+
+  //       // Add the 'current-slide' class to the currently active slide
+  //       $(".swiper-slide").eq(swiper.activeIndex).addClass("current-slide");
+  //     },
+  //   },
+  //   spaceBetween: 40,
+  // });
+</script>
+
+<script src="{{ url_for('static', filename='learn.js') }}"></script>
+
+{% endblock %}

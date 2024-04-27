@@ -1,0 +1,56 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='transition.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="layer">
+  <div class="transition-message">Quiz</div>
+  <div class="transition-message-2">up next!</div>
+
+  <!-- <div class="transition-message">Go ace it!</div> -->
+  <canvas id="canvas"></canvas>
+</div>
+
+<section>
+  <div class="section-con">
+    <a class="start-con test-con" href="/quiz_1/1">
+      <img class="learning-icon" src="/static/images/test.png" alt="" />
+      <div class="link-text">Test yourself</div>
+    </a>
+
+    <a class="start-con" href="/learn/1">
+      <img class="learning-icon" src="/static/images/learning.png" alt="" />
+      <div class="link-text">Review</div>
+    </a>
+  </div>
+</section>
+
+<!-- <section class="section2"> -->
+<!-- <div class="section-con">
+  <a class="start-con" href="/learn/1">
+    <img class="learning-icon" src="/static/images/learning.png" alt="" />
+    <div class="link-text">Start learning</div>
+  </a>
+
+  <a class="start-con test-con" href="/quiz_1/1">
+    <img class="learning-icon" src="/static/images/test.png" alt="" />
+    <div class="link-text">Test yourself</div>
+  </a>
+</div> -->
+<!-- </section> -->
+
+<div class="bottom-layer"></div>
+
+<script></script>
+
+<script src="{{ url_for('static', filename='transition.js') }}"></script>
+
+{% endblock %}

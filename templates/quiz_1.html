@@ -1,0 +1,69 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='quiz_1.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+<canvas id="canvas2"></canvas>
+<div class="container quiz-con">
+  <div class="quiz-box">
+    <p class="quiz-question">{{quiz.question}}</p>
+    <form>
+      {% for option in quiz.options %}
+      <div class="option">
+        <input
+          type="radio"
+          id="option{{ loop.index }}"
+          name="options"
+          value="{{ loop.index }}"
+        />
+        <label for="option{{ loop.index }}"
+          >{{ loop.index }}. {{ option }}</label
+        >
+        <span class="show-correct">Correct!</span>
+        <span class="show-wrong">
+          Incorrect. {{quiz.keyWord}} is {{quiz.correctCharacter}}.
+          ({{quiz.options[loop.index - 1]}} means
+          "{{quiz.optionMeaning[loop.index - 1]}}.")
+        </span>
+      </div>
+      {% endfor %}
+
+      <div class="show-message">
+        Please select an option before checking the answer.
+      </div>
+      <!-- <div class="btns-con">
+      <button id="submit">Check Answer</button>
+      <button id="nextButton">next</button>
+    </div> -->
+    </form>
+    <div class="btns-con">
+      <button id="submit">Check Answer</button>
+      <button id="nextButton">next</button>
+    </div>
+  </div>
+  <!-- progress bar -->
+  <div class="progress-canvas-container">
+    <!-- <canvas id="canvas"></canvas> -->
+    <div class="progress-bar">
+      <canvas id="canvas"></canvas>
+      <span class="percentage"></span>
+    </div>
+    <div class="progress-number"></div>
+  </div>
+</div>
+
+<script>
+  let quiz = {{quiz|tojson}}
+  let id = {{id|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='quiz_1.js') }}"></script>
+
+{% endblock %}

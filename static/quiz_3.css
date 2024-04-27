@@ -1,0 +1,15 @@
+.menu-img {
+  width: 400px;
+  height: 600px;
+}
+
+.form-menu-con {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+}
+
+.show-message {
+  display: block;
+  visibility: hidden;
+}

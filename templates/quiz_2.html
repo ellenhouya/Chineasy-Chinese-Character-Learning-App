@@ -1,0 +1,53 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='quiz_2.css') }}"
+/>
+
+{% extends "layout.html" %} {% block content %}
+
+<div class="question">{{quiz.question}}</div>
+
+<div class="content-con">
+  <div class="images-con">
+    {% for img in quiz.images %}
+    <div class="img-con">
+      <div class="image-number">{{ loop.index }}</div>
+      <img
+        src="/static/images/quiz/{{img}}.png"
+        alt=""
+        class="draggable ui-widget-content drag-{{img}}"
+      />
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="droppable-feedback-con">
+    <div class="ui-widget-header droppable drop-{{quiz.keyWord}}">
+      <p>{{quiz.keyWordChi}}</p>
+    </div>
+
+    <div class="feedback feedback-correct">Correct!</div>
+    <div class="feedback feedback-wrong">
+      Wrong answer. "{{quiz.keyWordChi}}" means "{{quiz.correctAnswer}}.
+      <div class="dragged-image-meaning"></div>
+    </div>
+  </div>
+</div>
+
+<button id="nextButton">Next</button>
+<span class="show-message">You haven't completed the question.</span>
+
+<script>
+  let quiz = {{quiz|tojson}}
+  let id = {{id|tojson}}
+</script>
+
+<script src="{{ url_for('static', filename='quiz_2.js') }}"></script>
+
+{% endblock %}
