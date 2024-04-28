@@ -11,6 +11,13 @@
 .knowledge {
   margin-top: 20px;
 }
+
+.knowledge h2,
+.review h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .review {
   margin-top: 20px;
 }
