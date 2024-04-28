@@ -8,7 +8,7 @@ $(function () {
   $(".droppable").droppable({
     over: function (event, ui) {
       $(this).css({
-        backgroundColor: "#f5ee9e",
+        backgroundColor: "rgb(255, 214, 77)",
         color: "#000",
       });
     },
@@ -19,12 +19,13 @@ $(function () {
     },
 
     drop: function (event, ui) {
-      let draggableClass = ui.draggable.attr("class").split(" ")[2]; //
+      let draggableClass = ui.draggable.attr("class").split(" ")[2];
+      let draggableClass2 = ui.draggable.attr("class").split(" ")[3];
 
       // Extract the part after the hyphen (-) from the class names
       let draggableClassSuffix = draggableClass.split("-")[1];
 
-      console.log(draggableClass);
+      console.log(draggableClass2);
       console.log(draggableClassSuffix);
 
       // Disable draggable behavior for all elements
@@ -48,12 +49,15 @@ $(function () {
 
             $(".feedback-correct").show();
             $(".feedback-wrong").hide();
+
+            ///  push images into rectangleArray
+            pushArrayImages();
           } else {
             $(".droppable").css({
               backgroundColor: "red",
             });
             $(".dragged-image-meaning").text(
-              `The image you dragged means "${draggableClassSuffix}."`
+              `The image you dragged is "${draggableClass2.split("-")[1]}."`
             );
             $(".feedback-correct").hide();
             $(".feedback-wrong").show();

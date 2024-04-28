@@ -233,8 +233,9 @@ quizzes_1 = [
 quizzes_2 = [
    {
       "id":6,
-      "question":"Q6: Drag and drop the corresponding image into the two characters(白米).",
+      "question":"Q6: Drag and drop the corresponding image into the two characters (白米).",
       "images":["rice", "wine", "fish", "lamb"],
+      "chi":["白米", "酒", "魚肉","羊肉"],
       "correctAnswer": "rice",
       "keyWord":"rice",
       "keyWordChi":"白米",
@@ -244,8 +245,9 @@ quizzes_2 = [
 
    {
       "id":7,
-      "question":"Q7: Drag and drop the corresponding image into the two characters(牛肉).",
+      "question":"Q7: Drag and drop the corresponding image into the two characters (牛肉).",
       "images":["vegetable", "wine", "fish", "beef"],
+      "chi":["菜", "酒", "魚肉","牛肉"],
       "correctAnswer": "beef",
       "keyWord":"beef",
       "keyWordChi":"牛肉",
@@ -255,8 +257,9 @@ quizzes_2 = [
 
    {
       "id":8,
-      "question":"Q8: Drag and drop the corresponding image into the two characters(白酒).",
+      "question":"Q8: Drag and drop the corresponding image into the two characters (白酒).",
       "images":["lamb", "wine", "vegetable", "rice"],
+      "chi":["羊肉", "酒", "菜","米"],
       "correctAnswer": "wine",
       "keyWord":"wine",
       "keyWordChi":"白酒",
@@ -266,8 +269,9 @@ quizzes_2 = [
 
    {
       "id":9,
-      "question":"Q9: Drag and drop the corresponding image into the two characters(魚肉).",
+      "question":"Q9: Drag and drop the corresponding image into the two characters (魚肉).",
       "images":["water", "vegetable", "beef", "fish"],
+      "chi":["水", "菜", "牛肉","魚肉"],
       "correctAnswer": "fish",
       "keyWord":"fish",
       "keyWordChi":"魚肉",
@@ -277,8 +281,9 @@ quizzes_2 = [
 
    {
       "id":10,
-      "question":"Q10: Drag and drop the corresponding image into the two characters(羊肉).",
+      "question":"Q10: Drag and drop the corresponding image into the two characters (羊肉).",
       "images":["wine", "lamb", "rice", "fish"],
+       "chi":["酒", "羊肉", "米","魚肉"],
       "correctAnswer": "lamb",
       "keyWord":"lamb",
       "keyWordChi":"羊肉",

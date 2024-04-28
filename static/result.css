@@ -1,8 +1,9 @@
-.container {
+.result-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 0 0 40px;
 }
+
 .score {
   font-size: 24px;
   font-weight: bold;
@@ -20,6 +21,10 @@
 .knowledge ul {
   color: var(--darkGray);
 }
+.knowledge ul li,
+.review ul li {
+  margin-top: 10px;
+}
 
 .review ul {
   padding-left: 40px;
@@ -27,13 +32,9 @@
 }
 
 .btns-con {
-  /* display: flex;
-  justify-content: end;
-  margin-top: 100px; */
-  position: absolute;
-  right: 100px;
-  top: 60vh;
   display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
 }
 
 #home-btn {

@@ -1,15 +1,48 @@
+.quiz3_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-question {
+  font-size: 23px;
+  margin-top: 80px;
+}
+
 .menu-img {
   width: 400px;
-  height: 600px;
+  height: 550px;
 }
 
 .form-menu-con {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-evenly; */
   max-width: 1000px;
+  padding-top: 30px;
+}
+
+.form-menu-con form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0;
+  margin-right: 100px;
+
+  border-radius: 5px;
+  background: var(--lightGray);
+  padding: 30px 30px 0 30px;
+  width: 425px;
 }
 
 .show-message {
   display: block;
   visibility: hidden;
+}
+
+.btns-con {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
 }

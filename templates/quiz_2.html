@@ -9,7 +9,15 @@
   href="{{ url_for('static', filename='quiz_2.css') }}"
 />
 
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='progressBar.css') }}"
+/>
+
 {% extends "layout.html" %} {% block content %}
+
+<canvas id="canvas2"></canvas>
 
 <div class="question">{{quiz.question}}</div>
 
@@ -17,11 +25,11 @@
   <div class="images-con">
     {% for img in quiz.images %}
     <div class="img-con">
-      <div class="image-number">{{ loop.index }}</div>
+      <span class="image-number">{{ loop.index }}</span>
       <img
         src="/static/images/quiz/{{img}}.png"
         alt=""
-        class="draggable ui-widget-content drag-{{img}}"
+        class="draggable ui-widget-content drag-{{img}} chi-{{ quiz.chi[loop.index-1] }}"
       />
     </div>
     {% endfor %}
@@ -34,20 +42,31 @@
 
     <div class="feedback feedback-correct">Correct!</div>
     <div class="feedback feedback-wrong">
-      Wrong answer. "{{quiz.keyWordChi}}" means "{{quiz.correctAnswer}}.
+      Incorrect. "{{quiz.keyWordChi}}" means "{{quiz.correctAnswer}}.
       <div class="dragged-image-meaning"></div>
     </div>
   </div>
 </div>
 
-<button id="nextButton">Next</button>
+<!-- <button id="nextButton">Next</button> -->
 <span class="show-message">You haven't completed the question.</span>
+
+<div class="progress-canvas-container">
+  <div class="progress-bar">
+    <canvas id="canvas"></canvas>
+    <span class="percentage"></span>
+    <button id="nextButton">Next</button>
+  </div>
+
+  <div class="progress-number"></div>
+</div>
 
 <script>
   let quiz = {{quiz|tojson}}
   let id = {{id|tojson}}
 </script>
 
+<script src="{{ url_for('static', filename='progressBar.js') }}"></script>
 <script src="{{ url_for('static', filename='quiz_2.js') }}"></script>
 
 {% endblock %}

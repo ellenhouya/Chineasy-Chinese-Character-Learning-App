@@ -26,6 +26,8 @@ $(document).ready(function () {
         ///// show correct message
         messageSpan.filter(".show-correct").show();
         messageSpan.filter(".show-wrong").hide();
+
+        pushArrayImages();
       } else {
         /// show wrong message
         messageSpan.filter(".show-wrong").show();
@@ -75,5 +77,10 @@ $(document).ready(function () {
     if (nextQuizID >= 16) {
       window.location.href = `/result`;
     }
+  });
+
+  $('input[type="radio"]').change(function () {
+    // Your logic here when a radio button is selected
+    $(".show-message").css("visibility", "hidden");
   });
 });

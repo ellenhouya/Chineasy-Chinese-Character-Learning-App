@@ -1,14 +1,18 @@
 .question {
-  margin: 30px 0;
-  font-size: 18px;
+  margin: 70px 0 30px 0;
+  font-size: 23px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .content-con {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 670px;
+  padding: 0 150px;
 }
 
 .images-con {
@@ -16,6 +20,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
+}
+
+.img-con {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.image-number {
+  font-size: 19px;
+  font-weight: 500;
+  margin-right: 15px;
 }
 
 .droppable {
@@ -41,18 +56,20 @@
 .feedback-correct {
   color: green;
   display: none;
+  font-size: 23px;
+  text-align: center;
+  margin-top: 7px;
+  font-weight: 500;
 }
 
 .feedback-wrong {
   color: red;
   display: none;
+  font-size: 20px;
+  margin-top: 7px;
+  font-weight: 500;
 }
 
-#nextButton {
-  position: absolute;
-  bottom: 50px;
-  right: 120px;
-}
 .show-message {
   color: red;
   position: absolute;
@@ -71,6 +88,18 @@
   border-radius: 5px;
   text-decoration: none;
   background-color: var(--accent);
+
+  /* position: absolute;
+  bottom: 5px !important;
+  right: 200px !important; */
+  height: 50px;
+  width: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0 !important;
+  position: absolute;
+  left: 650px;
 }
 
 #nextButton {

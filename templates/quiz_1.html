@@ -9,6 +9,12 @@
   href="{{ url_for('static', filename='quiz_1.css') }}"
 />
 
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='progressBar.css') }}"
+/>
+
 {% extends "layout.html" %} {% block content %}
 <canvas id="canvas2"></canvas>
 <div class="container quiz-con">
@@ -49,20 +55,29 @@
     </div>
   </div>
   <!-- progress bar -->
-  <div class="progress-canvas-container">
-    <!-- <canvas id="canvas"></canvas> -->
+  <!-- <div class="progress-canvas-container">
     <div class="progress-bar">
       <canvas id="canvas"></canvas>
       <span class="percentage"></span>
     </div>
     <div class="progress-number"></div>
+  </div> -->
+</div>
+
+<div class="progress-canvas-container">
+  <div class="progress-bar">
+    <canvas id="canvas"></canvas>
+    <span class="percentage"></span>
   </div>
+  <div class="progress-number"></div>
 </div>
 
 <script>
   let quiz = {{quiz|tojson}}
   let id = {{id|tojson}}
 </script>
+
+<script src="{{ url_for('static', filename='progressBar.js') }}"></script>
 
 <script src="{{ url_for('static', filename='quiz_1.js') }}"></script>
 

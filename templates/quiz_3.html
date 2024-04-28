@@ -15,10 +15,18 @@
   href="{{ url_for('static', filename='quiz_3.css') }}"
 />
 
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static', filename='progressBar.css') }}"
+/>
+
 {% extends "layout.html" %} {% block content %}
 
-<div class="container">
-  <p>{{quiz.question}}</p>
+<canvas id="canvas2"></canvas>
+
+<div class="container quiz3_container">
+  <p class="menu-question">{{quiz.question}}</p>
   <div class="form-menu-con">
     <form>
       {% for option in quiz.options %}
@@ -30,25 +38,37 @@
           value="{{ loop.index }}"
         />
         <label for="option{{ loop.index }}"
-          >{{ loop.index }}. {{ option }}</label
+          >{{ loop.index }}. &nbsp;&nbsp;{{ option }}</label
         >
         <span class="show-correct">Correct!</span>
         <span class="show-wrong"> {{quiz.feedback}} </span>
       </div>
       {% endfor %}
 
-      <div class="show-message">
-        Please select an option before checking the answer.
-      </div>
+      <!-- <div class="show-message">
+        Select an option before checking the answer.
+      </div> -->
       <div class="btns-con">
         <button id="submit">Check Answer</button>
         <button id="nextButton">next</button>
       </div>
+      <div class="show-message">
+        Select an option before checking the answer.
+      </div>
     </form>
     <div class="menu-img-con">
-      <img class="menu-img" src="/static/images/quiz/menu.png" alt="" />
+      <img class="menu-img" src="/static/images/quiz/menu3.png" alt="" />
     </div>
   </div>
+</div>
+
+<div class="progress-canvas-container">
+  <div class="progress-bar">
+    <canvas id="canvas"></canvas>
+    <span class="percentage"></span>
+  </div>
+
+  <div class="progress-number"></div>
 </div>
 
 <script>
@@ -56,6 +76,7 @@
   let id = {{id|tojson}}
 </script>
 
+<script src="{{ url_for('static', filename='progressBar.js') }}"></script>
 <script src="{{ url_for('static', filename='quiz_3.js') }}"></script>
 
 {% endblock %}
