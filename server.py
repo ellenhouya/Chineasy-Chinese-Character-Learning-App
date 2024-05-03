@@ -539,7 +539,7 @@ def reset_answers(quizzes):
         quiz['correct'] = 'N'
         quiz['answered'] = 'N'
         quiz['checked'] = 'N'
-        # quiz['userAnswer'] = None
+        quiz['userAnswer'] = None
 
         if quizzes == quizzes_2 :
             quiz['x'] = '0px'

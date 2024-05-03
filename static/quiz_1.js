@@ -96,6 +96,14 @@ $(document).ready(function () {
 
   $('input[type="radio"]').change(function () {
     $(".show-message").css("visibility", "hidden");
+
+    let selectedOption = $('input[name="options"]:checked');
+
+    let selectedValue = selectedOption.val();
+
+    updateAnswered();
+
+    saveAnswer(selectedValue);
   });
 
   // input change event
