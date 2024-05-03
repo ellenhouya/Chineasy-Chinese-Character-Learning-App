@@ -1,6 +1,8 @@
 let currentURL = window.location.href;
 let quizID = parseInt(currentURL.split("/").pop());
 
+let totalQuizzes = 15;
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -77,12 +79,13 @@ class Rectangle {
 }
 
 // $(document).ready(function () {
-console.log(quizID);
 $(".percentage").css("width", `${((canvas.width - 45) / 15) * quizID}px`);
 
 dinosaur.x = $(".percentage").width() - 10;
 
-$(".progress-number").text(`< ${quizID} / 15 >`);
+// $(".progress-number").text(`< ${quizID} / 15 >`);
+
+$(".question-input").val(quizID);
 // });
 
 function pushArrayImages() {
@@ -148,5 +151,66 @@ function handleMove() {
     frameNumber++;
   } else {
     frameNumber = 1;
+  }
+}
+
+function updateCheckedAnswered() {
+  console.log(id);
+
+  $.ajax({
+    type: "POST",
+    url: `/updateCheckedAnswered/${id}`,
+    contentType: "application/json",
+    success: function (response) {
+      console.log(response);
+    },
+    error: function (error) {
+      console.error(error);
+    },
+  });
+}
+
+function updateAnswered() {
+  $.ajax({
+    type: "POST",
+    url: `/updateAnswered/${id}`,
+    contentType: "application/json",
+    success: function (response) {
+      console.log(response);
+    },
+    error: function (error) {
+      console.error(error);
+    },
+  });
+}
+
+function renderQuestionStatus(quiz, checked) {
+  console.log(quiz);
+
+  if (quiz.userAnswer) {
+    let userAnswerIndex = parseInt(quiz.userAnswer);
+    let radioButton = document.getElementById(`option${userAnswerIndex}`);
+
+    console.log(userAnswerIndex, radioButton);
+    radioButton.checked = true;
+  }
+  // disable radio buttons
+  if (checked == "Y") {
+    $("input[type='radio']").not(this).prop("disabled", true);
+
+    // render message accordingly
+    $(".feedback-msg").each(function (index, msg) {
+      let selectedOption = $('input[name="options"]:checked');
+      let messageSpan = selectedOption
+        .closest(".option")
+        .find(".show-correct, .show-wrong");
+      if (quiz.correctAnswer == quiz.userAnswer) {
+        messageSpan.filter(".show-correct").show();
+        messageSpan.filter(".show-wrong").hide();
+      } else {
+        messageSpan.filter(".show-wrong").show();
+        messageSpan.filter(".show-correct").hide();
+      }
+    });
   }
 }

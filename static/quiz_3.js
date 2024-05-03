@@ -1,4 +1,26 @@
+function saveAnswer(selectedValue) {
+  $.ajax({
+    type: "POST",
+    url: `/quiz_3/${id}`,
+    data: JSON.stringify(selectedValue),
+    contentType: "application/json",
+    success: function (response) {
+      console.log(response);
+    },
+    error: function (error) {
+      // Handle the error response here
+      console.error(error);
+    },
+  });
+}
+
 $(document).ready(function () {
+  console.log(quiz);
+
+  if (quiz.answered == "Y") {
+    renderQuestionStatus(quiz, quiz.checked);
+  }
+
   // Add a click event listener to the "next" button using jQuery
   $("#submit").on("click", function (event) {
     event.preventDefault();
@@ -12,11 +34,15 @@ $(document).ready(function () {
     }
 
     if (selectedOption.length > 0) {
-      $(this).prop("disabled", true);
+      $("input[type='radio']").not(this).prop("disabled", true);
+
       // $(".show-message").hide();
       $(".show-message").css("visibility", "hidden");
+
+      updateCheckedAnswered();
+
       let selectedValue = selectedOption.val();
-      console.log(selectedValue);
+      saveAnswer(selectedValue);
 
       let messageSpan = selectedOption
         .closest(".option")
@@ -48,20 +74,10 @@ $(document).ready(function () {
     //   return;
     // }
 
+    updateAnswered();
+
     let selectedValue = selectedOption.val();
-    $.ajax({
-      type: "POST",
-      url: `/quiz_3/${id}`,
-      data: JSON.stringify(selectedValue),
-      contentType: "application/json",
-      success: function (response) {
-        console.log(response);
-      },
-      error: function (error) {
-        // Handle the error response here
-        console.error(error);
-      },
-    });
+    saveAnswer(selectedValue);
 
     // Extract the quiz ID from the current URL
     var currentURL = window.location.href;
@@ -75,12 +91,27 @@ $(document).ready(function () {
     window.location.href = `/quiz_3/${nextQuizID}`;
 
     if (nextQuizID >= 16) {
-      window.location.href = `/result`;
+      window.location.href = "/result";
     }
   });
 
   $('input[type="radio"]').change(function () {
-    // Your logic here when a radio button is selected
     $(".show-message").css("visibility", "hidden");
+  });
+
+  // jump to another question
+  $(".question-input").keypress(function (event) {
+    if (event.keyCode === 13) {
+      let inputValue = $(this).val();
+
+      if (inputValue < 1 || inputValue > 15) return;
+
+      let type_number =
+        inputValue % 5 != 0
+          ? Math.floor(inputValue / 5) + 1
+          : Math.floor(inputValue / 5);
+
+      window.location.href = `/quiz_${type_number}/${inputValue}`;
+    }
   });
 });

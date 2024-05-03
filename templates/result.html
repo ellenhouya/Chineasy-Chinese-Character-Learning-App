@@ -20,6 +20,20 @@
       <li>{{ question }}</li>
       {% endfor %}
     </ul>
+
+    <!-- <ul>
+      {% for question in correct_questions %} {% set question_number =
+      question.split(':')[0].split('Q')[1] %}
+      <li>
+        <a
+          href=""
+          class="correct-qustion-link correct-qustion-link-{{question_number}}"
+        >
+          {{ question }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul> -->
   </div>
   <div class="review">
     <h2>What you should review</h2>
@@ -28,6 +42,19 @@
       <li>{{ question }}</li>
       {% endfor %}
     </ul>
+    <!-- <ul>
+      {% for question in incorrect_questions %} {% set question_number =
+      question.split(':')[0].split('Q')[1] %}
+      <li>
+        <a
+          href=""
+          class="incorrect-qustion-link incorrect-qustion-link-{{question_number}}"
+        >
+          {{ question }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul> -->
   </div>
   <div class="btns-con">
     <button id="retry-quiz-btn">Retry Quiz</button>
@@ -41,6 +68,7 @@
   let incorrect_questions = {{incorrect_questions|tojson}}
 </script>
 
+<script src="{{ url_for('static', filename='layout.js') }}"></script>
 <script src="{{ url_for('static', filename='result.js') }}"></script>
 
 {% endblock %}

@@ -48,7 +48,8 @@
   width: 100px;
 }
 
-.start-con {
+.start-con,
+.test-con {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,7 +120,8 @@
   }
 }
 
-.start-con:hover {
+.start-con:hover,
+.test-con:hover {
   background: -o-linear-gradient(right, #28004f, #0d90ae);
   transform: perspective(1000px) rotateY(20deg);
   text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -133,12 +135,17 @@
 }
 
 .brand-name {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin: 110px 0 20px 0;
 }
 
 div .lead {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 25px;
+}
+
+.lead-1 {
+  margin-bottom: 10px !important;
 }
 
 .fun {

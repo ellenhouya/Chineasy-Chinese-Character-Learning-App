@@ -33,6 +33,7 @@
 .evolution-con img {
   width: 100px;
   height: 110px;
+  /* border: 2px solid var(--darkGray); */
 }
 
 .evolution-con .right-arrow {
@@ -89,6 +90,7 @@ video:last-child {
 .description {
   font-style: italic;
   font-size: 13px;
+  margin-top: 5px;
 }
 
 .previous-btn,
@@ -108,7 +110,7 @@ video:last-child {
   outline: none;
   border: none;
   border-radius: 5px;
-  transition: all 0.5s;
+  transition: all 0.2s;
   overflow: hidden;
   cursor: pointer;
   display: flex;

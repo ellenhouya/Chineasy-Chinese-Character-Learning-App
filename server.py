@@ -24,7 +24,7 @@ characters = [
       "pinyin":"bái",
       "audio":"白.m4a",
       "evolutionImages":["白1.png", "白2.png","白3.png","白4.png","白5.png"],
-      "video":["白.mov"],
+      "video":["白.mov"], 
   },
 
   {
@@ -181,7 +181,9 @@ quizzes_1 = [
       "optionMeaning":["wine", "bull", "meat", "fish"],
       "correctAnswer": "3",
       "correctCharacter":"肉",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
       
     },
 
@@ -193,7 +195,9 @@ quizzes_1 = [
       "optionMeaning":["fish", "rice", "goat", "big"],
       "correctAnswer": "1",
       "correctCharacter":"魚",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
     },
 
     {
@@ -204,7 +208,9 @@ quizzes_1 = [
       "optionMeaning":["water", "vegetable", "meat", "small"],
       "correctAnswer": "2",
       "correctCharacter":"菜",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
     },
 
     {
@@ -215,7 +221,9 @@ quizzes_1 = [
       "optionMeaning":["big", "vegetable", "small", "goat"],
       "correctAnswer": "1",
       "correctCharacter":"大",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
     },
 
     {
@@ -226,7 +234,9 @@ quizzes_1 = [
       "optionMeaning":["fish", "bull", "wine", "water"],
       "correctAnswer": "4",
       "correctCharacter":"水",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
     },
 ]
 
@@ -239,7 +249,11 @@ quizzes_2 = [
       "correctAnswer": "rice",
       "keyWord":"rice",
       "keyWordChi":"白米",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N",
+      "x": "0px",
+      "y": "0px"
     
    },
 
@@ -251,7 +265,11 @@ quizzes_2 = [
       "correctAnswer": "beef",
       "keyWord":"beef",
       "keyWordChi":"牛肉",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N",
+      "x": "0px",
+      "y": "0px"
     
    },
 
@@ -263,7 +281,11 @@ quizzes_2 = [
       "correctAnswer": "wine",
       "keyWord":"wine",
       "keyWordChi":"白酒",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N",
+      "x": "0px",
+      "y": "0px"
     
    },
 
@@ -275,7 +297,11 @@ quizzes_2 = [
       "correctAnswer": "fish",
       "keyWord":"fish",
       "keyWordChi":"魚肉",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N",
+      "x": "0px",
+      "y": "0px"
     
    },
 
@@ -287,7 +313,11 @@ quizzes_2 = [
       "correctAnswer": "lamb",
       "keyWord":"lamb",
       "keyWordChi":"羊肉",
-      "correct":"N"
+      "correct":"N",
+      "answered":"N",
+      "checked":"N",
+      "x": "0px",
+      "y": "0px"
     
    }
 ]
@@ -297,48 +327,58 @@ quizzes_3 = [
     {
       "id":11,
       "question":"Q11: Jose wants to order a small white wine. Based on the menu, how much will he need to pay?",
-      "options":["$3","$4", "$5","$6"], 
-      "correctAnswer": "3",
-      "feedback":"A small white wine is $5.",
-      "correct":"N"
+      "options":["$A","$C", "$H","$K"], 
+      "correctAnswer": "4",
+      "feedback":"A small white wine is $K.",
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
      },
 
      {
       "id":12,
       "question":"Q12: Javier wants to order a large portion of fish. Based on the menu, how much will he need to pay?",
-      "options":["$20","$21", "$22","$23"], 
-      "correctAnswer": "1",
-      "feedback":"A large portion of fish is $20.",
-      "correct":"N"
+      "options":["$A","$B", "$C","$D"], 
+      "correctAnswer": "3",
+      "feedback":"A large portion of fish is $C.",
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
      },
 
    
      {
       "id":13,
       "question":"Q13: Emily wants to order a small portion of lamb. Based on the menu, how much will she need to pay?",
-      "options":["$11","$12", "$13","$14"], 
+      "options":["$B","$C", "$E","$F"], 
       "correctAnswer": "4",
-      "feedback":"A small portion of lamb is $14.",
-      "correct":"N"
+      "feedback":"A small portion of lamb is $F.",
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
      },
 
      {
       "id":14,
       "question":"Q14: Stephen wants to order a large portion of beef with a vegetable. Based on the menu, how much will he need to pay?",
-      "options":["$16","$17", "$18","$19"], 
-      "correctAnswer": "3",
-      "feedback":"A large portion of beef with a vegetable is $18.",
-      "correct":"N"
+      "options":["$A + $2","$A + $3", "$D + $2","$D + $3"], 
+      "correctAnswer": "2",
+      "feedback":"A large portion of beef with a vegetable is $A + $3.",
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
      },
 
 
      {
       "id":15,
       "question":"Q15: Kimmy wants to order a small portion of fish with rice. Based on the menu, how much will she need to pay?",
-      "options":["$17", "$18","$19","$20"], 
-      "correctAnswer": "1",
-      "feedback":"A small portion of fish with rice is $17.",
-      "correct":"N"
+      "options":["$C + $2", "$D + $2","$E + $3","$F + $3"], 
+      "correctAnswer": "2",
+      "feedback":"A small portion of fish with rice is $D + $2.",
+      "correct":"N",
+      "answered":"N",
+      "checked":"N"
      }
      
 
@@ -352,7 +392,7 @@ quizzes_3 = [
 # ROUTES
 @app.route('/')
 def home():
-   return render_template('home.html')  
+   return render_template('home.html', quizzes_1 = quizzes_1, quizzes_2 = quizzes_2, quizzes_3 = quizzes_3)  
  
 @app.route('/learn/<int:id>')
 def learn_page(id):
@@ -371,7 +411,10 @@ def learn_page(id):
 
 @app.route('/quiz_1/<int:id>', methods=["GET", "POST"])
 def quiz1_page(id):
+    print("-----------")
     print(quizzes_1)
+    print("-----------")
+    
     quiz = next((quiz for quiz in quizzes_1 if quiz["id"] == id), None)
 
     if request.method == 'GET':
@@ -389,9 +432,8 @@ def quiz1_page(id):
       else:
          quiz["correct"] = "N"
       
-      print("-------")
       print(quizzes_1)
-      print("-------")
+
       return quiz
 
     
@@ -409,17 +451,25 @@ def quiz2_page(id):
     elif request.method == 'POST':
       data = request.json
      
-      quiz["userAnswer"] = data
+      quiz["userAnswer"] = data["draggableClassSuffix"]
       if quiz["userAnswer"] == quiz["correctAnswer"]:
          quiz["correct"] = "Y"
       else:
          quiz["correct"] = "N"
-      
+    
+    #   save x y position
+      quiz["x"] = data["left"]
+      quiz["y"] = data["top"]
+      print("--------")
+      print(quiz)
+      print("--------")
+
       return quiz
     
 
 @app.route('/quiz_3/<int:id>', methods=["GET", "POST"])
 def quiz3_page(id):
+
   
     quiz = next((quiz for quiz in quizzes_3 if quiz["id"] == id), None)
 
@@ -483,6 +533,84 @@ def result():
 @app.route('/transition')
 def transition_page():
     return render_template('transition.html')
+
+def reset_answers(quizzes):
+    for quiz in quizzes:
+        quiz['correct'] = 'N'
+        quiz['answered'] = 'N'
+        quiz['checked'] = 'N'
+        # quiz['userAnswer'] = None
+
+        if quizzes == quizzes_2 :
+            quiz['x'] = '0px'
+            quiz['y'] = '0px'
+
+
+@app.route('/resetAnswers', methods=["POST"])
+def reset_page():
+ 
+    # set the 'correct' field to 'N' for quizzes_1, quizzes_2, quizzes_3
+    global quizzes_1, quizzes_2, quizzes_3  
+ 
+    reset_answers(quizzes_1)
+    reset_answers(quizzes_2)
+    reset_answers(quizzes_3)
+    
+    return jsonify({'message': 'updated successfully'})
+
+
+
+@app.route('/updateCheckedAnswered/<int:id>', methods=["POST"])
+def save_status_page(id):
+      
+    for quiz in quizzes_1:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            quiz["checked"] = "Y"
+            break
+
+   
+    for quiz in quizzes_2:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            quiz["checked"] = "Y"
+            break
+
+
+    for quiz in quizzes_3:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            quiz["checked"] = "Y"
+            break
+
+    return jsonify({"message": f"Question with ID {id} updated successfully."})
+      
+
+
+@app.route('/updateAnswered/<int:id>', methods=["POST"])
+def save_answered_page(id):
+      
+    for quiz in quizzes_1:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            break
+
+   
+    for quiz in quizzes_2:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            break
+
+
+    for quiz in quizzes_3:
+        if quiz["id"] == id:
+            quiz["answered"] = "Y"
+            break
+
+    return jsonify({"message": f"Question with ID {id} updated successfully."})   
+     
+
+
 
 if __name__ == '__main__':
    app.run(debug = True)

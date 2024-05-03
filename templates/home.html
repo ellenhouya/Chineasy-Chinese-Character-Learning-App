@@ -18,12 +18,14 @@
     <!-- <div class="col-md-8 offset-md-2"> -->
     <div>
       <h2 class="brand-name display-4">
-        Welcome to
+        <!-- Welcome to -->
         <div class="chineasy eng"></div>
       </h2>
+      <p class="lead lead-1">Using pictographic characters to recognize</p>
       <p class="lead">
-        Master essential Chinese food vocabulary from ingredients to portions
+        essential Chinese food vocabulary from ingredients to portions
       </p>
+
       <hr class="my-4" />
 
       <div class="section-con">
@@ -32,7 +34,7 @@
           <div class="link-text">Start learning</div>
         </a>
 
-        <a class="start-con test-con" href="/quiz_1/1">
+        <a class="test-con" href="/quiz_1/1">
           <img class="learning-icon" src="/static/images/test.png" alt="" />
           <div class="link-text">Test yourself</div>
         </a>
@@ -47,8 +49,13 @@
   <div>This is fun!</div>
 </div>
 
-<script></script>
+<script>
+  let quizzes_1 = {{quizzes_1|tojson}}
+  let quizzes_2 = {{quizzes_2|tojson}}
+  let quizzes_3 = {{quizzes_3|tojson}}
+</script>
 
+<script src="{{ url_for('static', filename='layout.js') }}"></script>
 <script src="{{ url_for('static', filename='home.js') }}"></script>
 
 {% endblock %}

@@ -40,8 +40,8 @@
         <label for="option{{ loop.index }}"
           >{{ loop.index }}. &nbsp;&nbsp;{{ option }}</label
         >
-        <span class="show-correct">Correct!</span>
-        <span class="show-wrong"> {{quiz.feedback}} </span>
+        <span class="feedback-msg show-correct">Correct!</span>
+        <span class="feedback-msg show-wrong"> {{quiz.feedback}} </span>
       </div>
       {% endfor %}
 
@@ -57,18 +57,51 @@
       </div>
     </form>
     <div class="menu-img-con">
-      <img class="menu-img" src="/static/images/quiz/menu3.png" alt="" />
+      <img class="menu-img" src="/static/images/quiz/menu.png" alt="" />
     </div>
   </div>
 </div>
 
 <div class="progress-canvas-container">
+  <!-- <div class="progress-bar">
+    <canvas id="canvas"></canvas>
+    <span class="percentage"></span>
+  </div> -->
+
+  <!-- <div class="progress-number"></div> -->
+  <!-- <div class="progress-number">
+    &lt;
+
+    <input type="number" class="question-input" min="1" max="15" />
+
+    / 15 &gt;
+  </div> -->
+
+  <div class="progress-number">
+    <div class="go-to-title">Navigate to Question:</div>
+    <ul class="question-list">
+      <li><a href="/quiz_1/1" class="q-link">1</a></li>
+      <li><a href="/quiz_1/2" class="q-link">2</a></li>
+      <li><a href="/quiz_1/3" class="q-link">3</a></li>
+      <li><a href="/quiz_1/4" class="q-link">4</a></li>
+      <li><a href="/quiz_1/5" class="q-link">5</a></li>
+      <li><a href="/quiz_2/6" class="q-link">6</a></li>
+      <li><a href="/quiz_2/7" class="q-link">7</a></li>
+      <li><a href="/quiz_2/8" class="q-link">8</a></li>
+      <li><a href="/quiz_2/9" class="q-link">9</a></li>
+      <li><a href="/quiz_2/10" class="q-link">10</a></li>
+      <li><a href="/quiz_3/11" class="q-link">11</a></li>
+      <li><a href="/quiz_3/12" class="q-link">12</a></li>
+      <li><a href="/quiz_3/13" class="q-link">13</a></li>
+      <li><a href="/quiz_3/14" class="q-link">14</a></li>
+      <li><a href="/quiz_3/15" class="q-link">15</a></li>
+    </ul>
+  </div>
+
   <div class="progress-bar">
     <canvas id="canvas"></canvas>
     <span class="percentage"></span>
   </div>
-
-  <div class="progress-number"></div>
 </div>
 
 <script>
@@ -76,6 +109,7 @@
   let id = {{id|tojson}}
 </script>
 
+<script src="{{ url_for('static', filename='layout.js') }}"></script>
 <script src="{{ url_for('static', filename='progressBar.js') }}"></script>
 <script src="{{ url_for('static', filename='quiz_3.js') }}"></script>
 
