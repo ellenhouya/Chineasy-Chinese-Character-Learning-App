@@ -184,7 +184,13 @@ function handleMove() {
   }
 }
 
-animate();
+$(document).ready(function () {
+  animate();
+
+  $(".test-con").click(function () {
+    resetData();
+  });
+});
 
 let heading_eng = "Chineasy";
 let i = 0;
