@@ -32,22 +32,21 @@
         <label for="option{{ loop.index }}"
           >{{ loop.index }}. {{ option }}</label
         >
+        {% if loop.index == quiz.correctAnswer | int %}
         <span class="feedback-msg show-correct">Correct!</span>
+        {% else %}
         <span class="feedback-msg show-wrong">
           Incorrect. {{quiz.keyWord}} is {{quiz.correctCharacter}}.
           ({{quiz.options[loop.index - 1]}} means
           "{{quiz.optionMeaning[loop.index - 1]}}.")
         </span>
+        {% endif %}
       </div>
       {% endfor %}
 
       <div class="feedback-msg show-message">
         Please select an option before checking the answer.
       </div>
-      <!-- <div class="btns-con">
-      <button id="submit">Check Answer</button>
-      <button id="nextButton">next</button>
-    </div> -->
     </form>
     <div class="btns-con">
       <button id="submit">Check Answer</button>
@@ -58,26 +57,7 @@
 
 <!-- progress bar -->
 
-<!-- <div class="progress-canvas-container">
-  <div class="progress-bar">
-    <canvas id="canvas"></canvas>
-    <span class="percentage"></span>
-  </div>
-  <div class="progress-number">
-    &lt;
-
-    <input type="number" class="question-input" min="1" max="15" />
-
-    / 15 &gt;
-  </div>
-</div> -->
-
 <div class="progress-canvas-container">
-  <!-- <div class="progress-bar">
-    <canvas id="canvas"></canvas>
-    <span class="percentage"></span>
-  </div> -->
-
   <div class="progress-number">
     <div class="go-to-title">Navigate to Question:</div>
     <ul class="question-list">

@@ -1,7 +1,7 @@
 function resetData() {
   // Send an AJAX request to update the quizzes_3 data on the server
   $.ajax({
-    url: "/resetAnswers", // URL of your server endpoint to update quizzes_3
+    url: "/resetAnswers",
     type: "POST",
     contentType: "application/json",
 

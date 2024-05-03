@@ -2,7 +2,6 @@
   --accent: rgb(255, 214, 77);
   --brown: #804200;
   --blue: rgb(166, 227, 255);
-  /* --blue: rgb(107, 195, 236); */
   --darkGray: #696666;
   --lightGray: #f5f4f4;
 }
@@ -16,16 +15,12 @@ body {
   width: 100vw;
   height: 100vh;
   background: radial-gradient(circle, #fff, #fff, #c2e1f0, #aadff8, #89d9fb);
-  /* background: url("/static/images/bkg2.jpg"); */
   background: url("/static/images/bkg19.png");
-
   background-size: cover;
   background-attachment: fixed;
   border: 50px solid var(--blue);
   border-top: 80px solid var(--blue);
   border-bottom: 80px solid var(--blue);
-
-  /**/
   border-width: 50px;
   border-style: solid;
   border-color: transparent;
@@ -35,11 +30,8 @@ body {
     #fff 90%,
     var(--blue) 100%
   );
-
   border-image-slice: 1;
   border-top: 80px solid var(--blue);
-
-  /* z-index: 2; */
 }
 
 .nav-con {
@@ -85,7 +77,6 @@ body {
 }
 
 .nav-bar ul li a {
-  /* color: #000; */
   color: var(--darkGray);
   font-size: 18px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -94,8 +85,6 @@ body {
   text-decoration: none;
   background-color: var(--accent);
 }
-
-/**/
 
 .home-link,
 .learn-link,

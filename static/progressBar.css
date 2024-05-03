@@ -50,20 +50,6 @@
   left: 0;
 }
 
-/* .progress-number a {
-  font-size: 23px;
-  color: var(--darkGray);
-  margin-right: 15px;
-}
-
-.q15-link {
-  margin-right: 0px !important;
-}
-
-.progress-number {
-  margin-top: 30px;
-} */
-
 .progress-number {
   display: flex;
   flex-direction: column;

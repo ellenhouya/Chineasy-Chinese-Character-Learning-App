@@ -329,7 +329,7 @@ quizzes_3 = [
       "question":"Q11: Jose wants to order a small white wine. Based on the menu, how much will he need to pay?",
       "options":["$A","$C", "$H","$K"], 
       "correctAnswer": "4",
-      "feedback":"A small white wine is $K.",
+      "feedback":"Incorrect. Answer: $K.",
       "correct":"N",
       "answered":"N",
       "checked":"N"
@@ -340,7 +340,7 @@ quizzes_3 = [
       "question":"Q12: Javier wants to order a large portion of fish. Based on the menu, how much will he need to pay?",
       "options":["$A","$B", "$C","$D"], 
       "correctAnswer": "3",
-      "feedback":"A large portion of fish is $C.",
+      "feedback":"Incorrect. Answer: $C.",
       "correct":"N",
       "answered":"N",
       "checked":"N"
@@ -352,7 +352,7 @@ quizzes_3 = [
       "question":"Q13: Emily wants to order a small portion of lamb. Based on the menu, how much will she need to pay?",
       "options":["$B","$C", "$E","$F"], 
       "correctAnswer": "4",
-      "feedback":"A small portion of lamb is $F.",
+      "feedback":"Incorrect. Answer: $F.",
       "correct":"N",
       "answered":"N",
       "checked":"N"
@@ -363,7 +363,7 @@ quizzes_3 = [
       "question":"Q14: Stephen wants to order a large portion of beef with a vegetable. Based on the menu, how much will he need to pay?",
       "options":["$A + $2","$A + $3", "$D + $2","$D + $3"], 
       "correctAnswer": "2",
-      "feedback":"A large portion of beef with a vegetable is $A + $3.",
+      "feedback":"Incorrect. Answer: $A + $3.",
       "correct":"N",
       "answered":"N",
       "checked":"N"
@@ -375,7 +375,7 @@ quizzes_3 = [
       "question":"Q15: Kimmy wants to order a small portion of fish with rice. Based on the menu, how much will she need to pay?",
       "options":["$C + $2", "$D + $2","$E + $3","$F + $3"], 
       "correctAnswer": "2",
-      "feedback":"A small portion of fish with rice is $D + $2.",
+      "feedback":"Incorrect. Answer: $D + $2.",
       "correct":"N",
       "answered":"N",
       "checked":"N"

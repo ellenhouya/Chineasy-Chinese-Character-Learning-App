@@ -40,11 +40,10 @@ $(function () {
       updateCheckedAnswered();
 
       // save position
-
       snapToMiddle(ui.draggable, $(this));
       let left = ui.draggable.css("left");
       let top = ui.draggable.css("top");
-      // console.log($ui.draggable.css("left"), $ui.draggable.css("top"));
+
       console.log(ui);
       console.log(left, top);
 
@@ -69,7 +68,7 @@ $(function () {
             $(".feedback-correct").show();
             $(".feedback-wrong").hide();
 
-            ///  push images into rectangleArray
+            //  push images into rectangleArray
             pushArrayImages();
           } else {
             $(".droppable").css({
@@ -83,11 +82,9 @@ $(function () {
           }
         },
         error: function (error) {
-          // Handle the error response here
           console.error(error);
         },
       });
-      // snapToMiddle(ui.draggable, $(this));
     },
   });
 });
@@ -113,7 +110,6 @@ $(document).ready(function () {
     });
 
     // show the message
-
     if (quiz.correctAnswer == quiz.userAnswer) {
       $(".droppable").css({
         backgroundColor: "green",
@@ -137,8 +133,6 @@ $(document).ready(function () {
       $(".feedback-wrong").show();
     }
 
-    //////////
-
     // Disable drag and drop feature
     $(".draggable").draggable("disable");
   }
@@ -148,7 +142,7 @@ $(document).ready(function () {
 
     // Extract the quiz ID from the current URL
     let currentURL = window.location.href;
-    let quizID = parseInt(currentURL.split("/").pop()); // Extract the last part of the URL and convert it to an integer
+    let quizID = parseInt(currentURL.split("/").pop());
 
     // Calculate the ID for the next quiz
     let nextQuizID = quizID + 1;

@@ -3,21 +3,14 @@
   left: 0;
   top: 80px;
   right: 50px;
-  /* width: 100%; */
   height: 100vh;
   background: var(--lightGray);
-  /* background: url("/static/images/bkg12.jpg");
-  background-size: cover;
-  background-attachment: fixed; */
-  /* background: #c7c7c7; */
-
   z-index: 105;
 }
 
 section {
   height: 100%;
   background: var(--darkGray);
-  /* background: url("/static/images/bkg17.jpg"); */
   background-size: cover;
   background-attachment: fixed;
   z-index: 104;
@@ -44,24 +37,14 @@ section {
   top: 40%;
 }
 
-/* .section2 {
-  width: calc(100vw / 2);
-  top: 80px;
-  height: 85vh;
-  background: var(--darkGray);
-} */
-
 .bottom-layer {
   position: absolute;
   bottom: 0;
   height: 80px;
   background: linear-gradient(to left, var(--blue), #fff, var(--blue));
   width: 100%;
-
   z-index: 106;
 }
-
-/* test and review container*/
 
 .section-con {
   width: 50%;
@@ -72,8 +55,6 @@ section {
   align-items: center;
   padding: 150px 0 230px 0;
 }
-
-/**/
 
 .learning-icon {
   width: 100px;
@@ -102,9 +83,6 @@ section {
   flex-direction: column;
 
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
-}
-
-.test-con {
 }
 
 .section-con a:hover {

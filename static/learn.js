@@ -4,9 +4,7 @@ let swiper;
 let quizID;
 $(document).ready(function () {
   let currentURL = window.location.href;
-  quizID = parseInt(currentURL.split("/").pop()); // Extract the last part of the URL and convert it to an integer
-
-  // swiper.slideTo(quizID - 1);
+  quizID = parseInt(currentURL.split("/").pop());
 
   // Calculate the ID for the next quiz
   let nextLearnID = quizID + 1;
@@ -30,7 +28,6 @@ $(document).ready(function () {
     if (nextLearnID <= 16) {
       window.location.href = `/learn/${nextLearnID}`;
     } else {
-      // window.location.href = "/quiz_1/1";
       // go to transition page
       window.location.href = "/transition";
     }
@@ -89,24 +86,3 @@ $(window).on("load", function () {
     spaceBetween: 40,
   });
 });
-
-// on: {
-//   slideChange: function () {
-//     // // Remove the 'current-slide' class from all slides
-//     // $(".swiper-slide").removeClass("current-slide");
-
-//     // // Add the 'current-slide' class to the currently active slide
-//     // $(".swiper-slide").eq(swiper.activeIndex).addClass("current-slide");
-
-//     $(".swiper-slide").css("background", "transparent");
-//     $(".slide-character-eng").css("background", "transparent");
-
-//     $(".swiper-slide")
-//       .eq(swiper.activeIndex)
-//       .css("background", "rgba(255, 255, 255, 0.8)");
-//     $(".swiper-slide")
-//       .eq(swiper.activeIndex)
-//       .find(".slide-character-eng")
-//       .css("background", "rgb(255, 214, 77)");
-//   },
-// },

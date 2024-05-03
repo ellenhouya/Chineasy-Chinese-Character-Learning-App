@@ -8,7 +8,6 @@ function saveAnswer(selectedValue) {
       console.log(response);
     },
     error: function (error) {
-      // Handle the error response here
       console.error(error);
     },
   });
@@ -25,7 +24,7 @@ $(document).ready(function () {
   $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    var selectedOption = $('input[name="options"]:checked');
+    let selectedOption = $('input[name="options"]:checked');
 
     if (selectedOption.length === 0) {
       // If no option is checked, display a message or handle the validation as needed
@@ -36,7 +35,6 @@ $(document).ready(function () {
     if (selectedOption.length > 0) {
       $("input[type='radio']").not(this).prop("disabled", true);
 
-      // $(".show-message").hide();
       $(".show-message").css("visibility", "hidden");
 
       updateCheckedAnswered();
@@ -49,15 +47,13 @@ $(document).ready(function () {
         .find(".show-correct, .show-wrong");
 
       if (quiz.correctAnswer == selectedValue) {
-        ///// show correct message
-        messageSpan.filter(".show-correct").show();
-        messageSpan.filter(".show-wrong").hide();
+        // show correct message
+        messageSpan.filter(".show-correct").css("visibility", "visible");
 
         pushArrayImages();
       } else {
-        /// show wrong message
-        messageSpan.filter(".show-wrong").show();
-        messageSpan.filter(".show-correct").hide();
+        // show wrong message
+        messageSpan.filter(".show-wrong").css("visibility", "visible");
       }
     } else {
       console.log("No option selected.");
@@ -67,12 +63,7 @@ $(document).ready(function () {
   $("#nextButton").on("click", function (event) {
     event.preventDefault();
 
-    var selectedOption = $('input[name="options"]:checked');
-    // If no option is checked, display a message or handle the validation as needed
-    // if (selectedOption.length === 0) {
-    //   $(".show-message").show();
-    //   return;
-    // }
+    let selectedOption = $('input[name="options"]:checked');
 
     updateAnswered();
 
@@ -80,14 +71,13 @@ $(document).ready(function () {
     saveAnswer(selectedValue);
 
     // Extract the quiz ID from the current URL
-    var currentURL = window.location.href;
-    var quizID = parseInt(currentURL.split("/").pop()); // Extract the last part of the URL and convert it to an integer
+    let currentURL = window.location.href;
+    let quizID = parseInt(currentURL.split("/").pop());
 
     // Calculate the ID for the next quiz
-    var nextQuizID = quizID + 1;
+    let nextQuizID = quizID + 1;
 
     // Navigate to the next page
-
     window.location.href = `/quiz_3/${nextQuizID}`;
 
     if (nextQuizID >= 16) {

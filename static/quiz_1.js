@@ -23,13 +23,11 @@ $(document).ready(function () {
   $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    $(".feedback-msg").hide();
-
     let selectedOption = $('input[name="options"]:checked');
 
     // If no option is checked, display a message or handle the validation as needed
     if (selectedOption.length === 0) {
-      $(".show-message").show();
+      $(".show-message").css("visibility", "visible");
       return;
     }
 
@@ -37,7 +35,7 @@ $(document).ready(function () {
       // disable options
       $("input[type='radio']").not(this).prop("disabled", true);
 
-      $(".show-message").hide();
+      $(".show-message").css("visibility", "hidden");
 
       // save the status (answered and checked)
       updateCheckedAnswered();
@@ -50,17 +48,14 @@ $(document).ready(function () {
         .find(".show-correct, .show-wrong");
 
       if (quiz.correctAnswer == selectedValue) {
-        ///// show correct message
-        messageSpan.filter(".show-correct").show();
-        messageSpan.filter(".show-wrong").hide();
+        // show correct message
+        messageSpan.filter(".show-correct").css("visibility", "visible");
 
-        ///  push images into rectangleArray
-
+        // push images into rectangleArray
         pushArrayImages();
       } else {
-        /// show wrong message
-        messageSpan.filter(".show-wrong").show();
-        messageSpan.filter(".show-correct").hide();
+        // show wrong message
+        messageSpan.filter(".show-wrong").css("visibility", "visible");
       }
     } else {
       console.log("No option selected.");
@@ -72,10 +67,6 @@ $(document).ready(function () {
 
     // If no option is checked, display a message or handle the validation as needed
     let selectedOption = $('input[name="options"]:checked');
-    // if (selectedOption.length === 0) {
-    //   $(".show-message").show();
-    //   return;
-    // }
 
     updateAnswered();
 

@@ -21,13 +21,11 @@
   font-size: 3em;
   font-weight: 900;
   letter-spacing: 0;
-  /* background: url("/static/images/bkg5.png"); */
   background: url("/static/images/bkg4.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-clip: text;
   color: transparent;
-
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: rgba(0, 0, 0, 0.9);
   margin-top: -20px;
@@ -41,8 +39,6 @@
   align-items: center;
   margin-top: 70px;
 }
-
-/**/
 
 .learning-icon {
   width: 100px;
@@ -112,9 +108,6 @@
     left: 100%;
   }
 
-  /* 90% {
-    left: 100%;
-  } */
   100% {
     left: 100%;
   }
@@ -135,7 +128,6 @@
 }
 
 .brand-name {
-  /* margin-bottom: 40px; */
   margin: 110px 0 20px 0;
 }
 

@@ -17,7 +17,6 @@
 
 .form-menu-con {
   display: flex;
-  /* justify-content: space-evenly; */
   max-width: 1000px;
   padding-top: 30px;
 }
@@ -33,7 +32,7 @@
   border-radius: 5px;
   background: var(--lightGray);
   padding: 30px 30px 0 30px;
-  width: 425px;
+  width: 470px;
 }
 
 .show-message {

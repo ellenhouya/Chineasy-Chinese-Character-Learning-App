@@ -17,10 +17,6 @@
 
 {% extends "layout.html" %} {% block content %}
 
-<!-- <div class="entryTimestamp">
-  You accessed this page at {{character_to_learn.entryTimestamp}}
-</div> -->
-
 <div class="container learning-con">
   <div class="character-info">
     <div class="word">
@@ -102,12 +98,7 @@
 </div>
 
 <div class="swiper-container slides-con">
-  <div class="swiper-wrapper">
-    <!-- <a class="swiper-slide" href="/learn/6">
-      <div class="slide-character-chi">測試</div>
-      <div class="slide-character-eng">water</div>
-    </a> -->
-  </div>
+  <div class="swiper-wrapper"></div>
 
   <div class="swiper-pagination"></div>
 </div>
@@ -117,34 +108,6 @@
 <script>
   let character_to_learn = {{character_to_learn|tojson}}
   let data = {{characters|tojson}}
-
-  // var  swiper = new Swiper(".swiper-container", {
-  //   effect: "coverflow",
-  //   grabCursor: true,
-  //   centeredSlides: true,
-  //   slidesPerView: "auto",
-  //   coverflowEffect: {
-  //     rotate: 5,
-  //     stretch: 0,
-  //     depth: 5,
-  //     modifier: 0,
-  //     slideShadows: true,
-  //   },
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //   },
-
-  //   on: {
-  //     slideChange: function () {
-  //       // Remove the 'current-slide' class from all slides
-  //       $(".swiper-slide").removeClass("current-slide");
-
-  //       // Add the 'current-slide' class to the currently active slide
-  //       $(".swiper-slide").eq(swiper.activeIndex).addClass("current-slide");
-  //     },
-  //   },
-  //   spaceBetween: 40,
-  // });
 </script>
 
 <script src="{{ url_for('static', filename='layout.js') }}"></script>

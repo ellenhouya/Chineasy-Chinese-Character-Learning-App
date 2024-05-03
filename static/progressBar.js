@@ -78,15 +78,13 @@ class Rectangle {
   }
 }
 
-// $(document).ready(function () {
-$(".percentage").css("width", `${((canvas.width - 45) / 15) * quizID}px`);
+$(document).ready(function () {
+  $(".percentage").css("width", `${((canvas.width - 45) / 15) * quizID}px`);
 
-dinosaur.x = $(".percentage").width() - 10;
+  dinosaur.x = $(".percentage").width() - 10;
 
-// $(".progress-number").text(`< ${quizID} / 15 >`);
-
-$(".question-input").val(quizID);
-// });
+  $(".question-input").val(quizID);
+});
 
 function pushArrayImages() {
   for (let i = 0; i < 50; i++) {
@@ -136,7 +134,6 @@ function animate(currentTime) {
 
   ctx.drawImage(img, dinosaur.x, dinosaur.y, dinosaur.w, dinosaur.h);
 
-  // small rectangles
   // draw small rectangles
 
   clearCanvasRect();
@@ -209,11 +206,9 @@ function renderQuestionStatus(quiz, checked) {
         .closest(".option")
         .find(".show-correct, .show-wrong");
       if (quiz.correctAnswer == quiz.userAnswer) {
-        messageSpan.filter(".show-correct").show();
-        messageSpan.filter(".show-wrong").hide();
+        messageSpan.filter(".show-correct").css("visibility", "visible");
       } else {
-        messageSpan.filter(".show-wrong").show();
-        messageSpan.filter(".show-correct").hide();
+        messageSpan.filter(".show-wrong").css("visibility", "visible");
       }
     });
   }

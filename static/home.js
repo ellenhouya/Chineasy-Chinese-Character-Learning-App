@@ -104,12 +104,9 @@ for (let i = 1; i <= 9; i++) {
 
 let counter = 0;
 
-/////
-
-let jumpHeight = 10; // Adjust this value to control the maximum height of the jump
-let jumpSpeed = 0.9; // Adjust this value to control the speed of the jump
-let jumpTime = 0; // Initialize jump time
-/////
+let jumpHeight = 10;
+let jumpSpeed = 0.9;
+let jumpTime = 0;
 
 function animate(currentTime) {
   counter++;
@@ -170,12 +167,6 @@ function handleMove() {
     frameNumberBoy2 = 1;
   }
 
-  // if (frameNumberBoy2 == 2) {
-  //   $(".fun").css({
-  //     left: `${girl2.x + 50}px`,
-  //     top: `${girl2.y + frameNumberBoy2 + 680}px`,
-  //   });
-  // } else
   if (frameNumberBoy2 == 4 || frameNumberBoy2 == 5) {
     $(".fun").css({
       left: `${girl2.x + 50}px`,
