@@ -144,7 +144,11 @@ function animate(currentTime) {
   updateRectangle();
 }
 
-animate();
+$(document).ready(function () {
+  animate();
+
+  $(`.q-link${quizID}`).css("background", "var(--accent)");
+});
 
 function handleMove() {
   if (frameNumber < 10) {
