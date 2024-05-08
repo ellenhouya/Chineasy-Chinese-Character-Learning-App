@@ -418,6 +418,7 @@ def quiz1_page(id):
     quiz = next((quiz for quiz in quizzes_1 if quiz["id"] == id), None)
 
     if request.method == 'GET':
+      
       if quiz:
         return render_template('quiz_1.html', quiz=quiz, id=id)
       else:
@@ -472,10 +473,6 @@ def quiz3_page(id):
 
   
     quiz = next((quiz for quiz in quizzes_3 if quiz["id"] == id), None)
-
-    print("-----------")
-    print(quiz)
-    print("-----------") 
 
     if request.method == 'GET':
       if quiz:
@@ -587,28 +584,37 @@ def save_status_page(id):
       
 
 
-@app.route('/updateAnswered/<int:id>', methods=["POST"])
+@app.route('/updateAnswered/<int:id>', methods=["GET","POST"])
 def save_answered_page(id):
-      
-    for quiz in quizzes_1:
-        if quiz["id"] == id:
-            quiz["answered"] = "Y"
-            break
+    
+    if request.method == 'POST':
+        for quiz in quizzes_1:
+            if quiz["id"] == id:
+                quiz["answered"] = "Y"
+                break
 
-   
-    for quiz in quizzes_2:
-        if quiz["id"] == id:
-            quiz["answered"] = "Y"
-            break
+    
+        for quiz in quizzes_2:
+            if quiz["id"] == id:
+                quiz["answered"] = "Y"
+                break
 
 
-    for quiz in quizzes_3:
-        if quiz["id"] == id:
-            quiz["answered"] = "Y"
-            break
-
-    return jsonify({"message": f"Question with ID {id} updated successfully."})   
+        for quiz in quizzes_3:
+            if quiz["id"] == id:
+                quiz["answered"] = "Y"
+                break
+        
+  
+        # return jsonify({"message": f"Question with ID {id} updated successfully."})   
+        return quiz
      
+
+    if request.method == 'GET':
+        # Extracting answered quizzes
+        unanswered_questions = [quiz for quiz_list in [quizzes_1, quizzes_2, quizzes_3] for quiz in quiz_list if quiz["answered"] == "N"]
+
+        return jsonify(unanswered_questions)
 
 
 

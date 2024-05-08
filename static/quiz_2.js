@@ -28,9 +28,6 @@ $(function () {
       // Extract the part after the hyphen (-) from the class names
       let draggableClassSuffix = draggableClass.split("-")[1];
 
-      console.log(draggableClass2);
-      console.log(draggableClassSuffix);
-
       // Disable draggable behavior for all elements
       isElementDropped = true;
       $(".draggable").draggable("disable");
@@ -39,13 +36,21 @@ $(function () {
       updateAnswered();
       updateCheckedAnswered();
 
+      let $qLink = $(".q-link" + id);
+      $qLink.css("background", "var(--lightGray)");
+
+      // update percentage
+      $.get(`/updateAnswered/${id}`, function (unAnsweredQuestions) {
+        updatePercentage(15 - unAnsweredQuestions.length);
+      });
+
       // save position
       snapToMiddle(ui.draggable, $(this));
       let left = ui.draggable.css("left");
       let top = ui.draggable.css("top");
 
-      console.log(ui);
-      console.log(left, top);
+      // console.log(ui);
+      // console.log(left, top);
 
       // save the user's answer
       $.ajax({
@@ -98,6 +103,8 @@ function snapToMiddle(dragger, target) {
 }
 
 $(document).ready(function () {
+  markUnanswered();
+
   if (quiz.answered == "Y" && quiz.checked == "Y") {
     // find the element with the class drag-${quiz.userAnswer}
     console.log(quiz);

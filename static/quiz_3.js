@@ -13,14 +13,39 @@ function saveAnswer(selectedValue) {
   });
 }
 
+// function addLayer(targetEle, className) {
+//   var content = $(targetEle);
+//   var beforeElement = $("<div></div>");
+
+//   beforeElement.addClass(className);
+
+//   content.prepend(beforeElement);
+// }
+
+// function removeLayer(element) {
+//   $(element).remove();
+// }
+
+function showMessage(id) {
+  // addLayer(".content", "content-before");
+  // addLayer(".nav-con", "nav-con-before");
+
+  $(id).addClass("show");
+}
+
 $(document).ready(function () {
+  markUnanswered();
+
   console.log(quiz);
+
+  if (quiz.id == 15) {
+    $("#nextButton").text("See result");
+  }
 
   if (quiz.answered == "Y") {
     renderQuestionStatus(quiz, quiz.checked);
   }
 
-  // Add a click event listener to the "next" button using jQuery
   $("#submit").on("click", function (event) {
     event.preventDefault();
 
@@ -65,16 +90,55 @@ $(document).ready(function () {
 
     let selectedOption = $('input[name="options"]:checked');
 
-    updateAnswered();
-
     let selectedValue = selectedOption.val();
-    saveAnswer(selectedValue);
 
-    // Extract the quiz ID from the current URL
+    // if (quiz.id != 15) {
+    //   updateAnswered();
+    // }
+
+    console.log(selectedValue);
+
+    if (selectedValue) {
+      updateAnswered();
+      saveAnswer(selectedValue);
+    }
+
+    // show the user if they have completed the quiz. if not, show all the questions they skipped.
+
+    if (quiz.id == 15) {
+      // need to go to server to retreived the updated data
+
+      $.get(`/updateAnswered/${id}`, function (data) {
+        console.log(data);
+
+        if (data.length > 0) {
+          // show message
+          let message = "Unanswered questions:\n";
+          data.forEach(function (question) {
+            message += question.id + ", ";
+          });
+          // Remove the trailing comma and space
+          message = message.slice(0, -2);
+
+          $(".unanswered_message").text(message);
+
+          // Show the alert
+          showMessage("#confirmMessage");
+
+          // toggle layer
+          $(".last-question-layer").toggle();
+        } else {
+          window.location.href = "/result";
+        }
+      });
+      return;
+    }
+
+    // // Extract the quiz ID from the current URL
     let currentURL = window.location.href;
     let quizID = parseInt(currentURL.split("/").pop());
 
-    // Calculate the ID for the next quiz
+    // // Calculate the ID for the next quiz
     let nextQuizID = quizID + 1;
 
     // Navigate to the next page
@@ -95,21 +159,21 @@ $(document).ready(function () {
     updateAnswered();
 
     saveAnswer(selectedValue);
+
+    let $qLink = $(".q-link" + id);
+    $qLink.css("background", "var(--lightGray)");
+
+    $.get(`/updateAnswered/${id}`, function (unAnsweredQuestions) {
+      updatePercentage(15 - unAnsweredQuestions.length);
+    });
   });
 
-  // jump to another question
-  $(".question-input").keypress(function (event) {
-    if (event.keyCode === 13) {
-      let inputValue = $(this).val();
+  $("#complete-q-btn").on("click", function (event) {
+    window.location.href = "/quiz_3/15";
+  });
 
-      if (inputValue < 1 || inputValue > 15) return;
-
-      let type_number =
-        inputValue % 5 != 0
-          ? Math.floor(inputValue / 5) + 1
-          : Math.floor(inputValue / 5);
-
-      window.location.href = `/quiz_${type_number}/${inputValue}`;
-    }
+  // complete questions
+  $("#see-result-btn").on("click", function (event) {
+    window.location.href = "/result";
   });
 });

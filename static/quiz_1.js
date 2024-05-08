@@ -14,7 +14,9 @@ function saveAnswer(selectedValue) {
 }
 
 $(document).ready(function () {
-  console.log(quiz);
+  // console.log(quiz);
+
+  markUnanswered();
 
   if (quiz.answered == "Y") {
     renderQuestionStatus(quiz, quiz.checked);
@@ -67,12 +69,15 @@ $(document).ready(function () {
 
     // If no option is checked, display a message or handle the validation as needed
     let selectedOption = $('input[name="options"]:checked');
-
-    updateAnswered();
-
     // Extract the quiz ID from the current URL
     let selectedValue = selectedOption.val();
-    saveAnswer(selectedValue);
+
+    if (selectedValue) {
+      updateAnswered();
+      saveAnswer(selectedValue);
+    }
+
+    console.log(quiz);
 
     // Calculate the ID for the next quiz
     let nextQuizID = quizID + 1;
@@ -95,21 +100,12 @@ $(document).ready(function () {
     updateAnswered();
 
     saveAnswer(selectedValue);
-  });
 
-  // input change event
-  $(".question-input").keypress(function (event) {
-    if (event.keyCode === 13) {
-      let inputValue = $(this).val();
+    let $qLink = $(".q-link" + id);
+    $qLink.css("background", "var(--lightGray)");
 
-      if (inputValue < 1 || inputValue > 15) return;
-
-      let type_number =
-        inputValue % 5 != 0
-          ? Math.floor(inputValue / 5) + 1
-          : Math.floor(inputValue / 5);
-
-      window.location.href = `/quiz_${type_number}/${inputValue}`;
-    }
+    $.get(`/updateAnswered/${id}`, function (unAnsweredQuestions) {
+      updatePercentage(15 - unAnsweredQuestions.length);
+    });
   });
 });

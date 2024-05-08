@@ -79,11 +79,11 @@ class Rectangle {
 }
 
 $(document).ready(function () {
-  $(".percentage").css("width", `${((canvas.width - 45) / 15) * quizID}px`);
+  $.get(`/updateAnswered/${id}`, function (unAnsweredQuestions) {
+    updatePercentage(15 - unAnsweredQuestions.length);
+  });
 
-  dinosaur.x = $(".percentage").width() - 10;
-
-  $(".question-input").val(quizID);
+  animate();
 });
 
 function pushArrayImages() {
@@ -140,12 +140,6 @@ function animate(currentTime) {
 
   updateRectangle();
 }
-
-$(document).ready(function () {
-  animate();
-
-  $(`.q-link${quizID}`).css("background", "var(--accent)");
-});
 
 function handleMove() {
   if (frameNumber < 10) {
@@ -212,4 +206,26 @@ function renderQuestionStatus(quiz, checked) {
       }
     });
   }
+}
+
+function markUnanswered() {
+  $.get(`/updateAnswered/${id}`, function (data) {
+    data.forEach(function (question) {
+      // Get the corresponding .q-link element
+      let questionNumber = question.id;
+      let $qLink = $(".q-link" + questionNumber);
+
+      // Add arrow container above the .q-link element
+      $qLink.css("background", "#ccc5b9");
+    });
+  });
+}
+
+function updatePercentage(numCorrectAnswers) {
+  $(".percentage").css(
+    "width",
+    `${((canvas.width - 45) / 15) * numCorrectAnswers}px`
+  );
+
+  dinosaur.x = $(".percentage").width() - 10;
 }

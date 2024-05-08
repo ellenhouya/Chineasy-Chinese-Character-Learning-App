@@ -33,6 +33,7 @@
   border-bottom-right-radius: 5px;
   margin: 10px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  width: 0;
 }
 
 .progress-number {
@@ -77,10 +78,14 @@
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: var(--lightGray);
+  /* background: var(--accent); */
 }
 
 .q-link:hover {
-  background-color: #f0f0f0;
   text-decoration: none;
   color: #333;
+}
+.question-list li:hover {
+  transform: scale(0.9);
 }
