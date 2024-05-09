@@ -100,3 +100,256 @@
   z-index: 1000;
   display: none;
 }
+
+@media (max-width: 1024px) {
+  .quiz3_container {
+    padding: 0 30px !important;
+  }
+
+  .form-menu-con {
+    max-width: 800px;
+  }
+
+  .form-menu-con form {
+    margin-right: 30px;
+    height: 450px;
+    width: 380px;
+  }
+
+  .menu-img-con {
+    height: 450px;
+    width: 350px;
+  }
+  .menu-img {
+    height: inherit;
+    width: inherit;
+  }
+
+  .feedback-msg {
+    font-size: 13px;
+  }
+
+  #submit,
+  #nextButton {
+    font-size: 14px;
+  }
+
+  .form-menu-con form label {
+    font-size: 16px;
+  }
+
+  .show-message {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #complete-q-btn,
+  #see-result-btn {
+    font-size: 12px !important;
+  }
+
+  .quiz3_container {
+    height: 100%;
+  }
+
+  .menu-question {
+    font-size: 16px;
+    margin-top: -140px;
+    margin-bottom: 0;
+  }
+
+  .menu-img-con {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .menu-img {
+    height: inherit;
+    width: 330px;
+  }
+
+  .form-menu-con {
+    flex-direction: column-reverse;
+    padding-top: 15px;
+  }
+
+  .form-menu-con form {
+    height: 270px;
+    width: 330px;
+    padding: 0px 20px 0 20px;
+  }
+
+  .form-menu-con form label,
+  .feedback-msg,
+  .show-wrong,
+  .show-correct,
+  .show-message {
+    font-size: 12px !important;
+  }
+
+  #submit,
+  #nextButton {
+    font-size: 11px !important;
+  }
+
+  .unanswered_message {
+    font-size: 11px !important;
+  }
+
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .progress-number {
+    margin-top: 150px !important;
+  }
+
+  .go-to-title {
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--lightGray);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .question-list li {
+    font-size: 12px;
+  }
+  .progress-bar {
+    height: 30px !important;
+    margin-top: 20px !important;
+  }
+
+  #canvas {
+    height: 50px !important;
+  }
+  .percentage {
+    margin: 8px !important;
+  }
+
+  .option {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 768px) and (min-height: 1025px) {
+  .feedback {
+    font-size: 9px !important;
+  }
+  .quiz3_container {
+    margin-top: -40px;
+  }
+
+  .menu-img-con {
+    height: 390px;
+    margin-bottom: 30px;
+  }
+
+  .menu-img {
+    height: inherit;
+    width: 330px;
+  }
+
+  .form-menu-con form {
+    height: 300px;
+    width: 330px;
+    padding: 0px 20px 0 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .quiz3_container {
+    padding: 0 10px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 80px;
+  }
+
+  .menu-question {
+    font-size: 10px;
+    margin-top: -50px;
+  }
+
+  .menu-img-con {
+    height: 370px;
+    margin-bottom: 0;
+    width: inherit;
+  }
+
+  .menu-img {
+    width: inherit;
+    height: 330px;
+  }
+
+  .form-menu-con {
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  .form-menu-con form {
+    height: 230px;
+    width: inherit;
+    padding: 0 15px 30px 20px;
+    margin-top: -30px;
+  }
+
+  .form-menu-con form label,
+  .feedback-msg,
+  .show-wrong,
+  .show-correct,
+  .show-message {
+    font-size: 11px;
+  }
+
+  .show-message {
+    margin-top: 42px;
+  }
+
+  #submit,
+  #nextButton {
+    font-size: 11px !important;
+    margin-top: -30px !important;
+    padding: 3px 10px;
+  }
+
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .go-to-title {
+    font-size: 12px;
+  }
+
+  .question-list li {
+    font-size: 12px;
+  }
+  .progress-bar {
+    height: 30px !important;
+    margin-top: 20px !important;
+  }
+
+  #canvas {
+    height: 50px !important;
+  }
+  .percentage {
+    margin: 8px !important;
+  }
+
+  #confirmMessage {
+    padding: 15px 10px;
+    font-size: 10px;
+  }
+
+  .yes-no-btn-con button {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  #confirmMessage {
+    width: 300px;
+  }
+}

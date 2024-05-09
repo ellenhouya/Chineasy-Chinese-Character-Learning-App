@@ -165,3 +165,148 @@ input[type="radio"] {
   width: 50px;
   padding: 0 0 0 10px;
 }
+
+@media (max-width: 768px) {
+  .quiz-con {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .quiz-box {
+    font-size: 16px;
+    margin-top: -30px;
+    margin-bottom: 0;
+    width: 450px;
+  }
+
+  .quiz-question {
+    font-size: 18px;
+  }
+
+  .quiz-box label {
+    font-size: 18px;
+  }
+
+  .form-menu-con form label,
+  .feedback-msg,
+  .show-wrong,
+  .show-correct,
+  .show-message {
+    font-size: 13px;
+  }
+
+  #submit,
+  #nextButton {
+    font-size: 11px !important;
+    z-index: 1000;
+  }
+
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .progress-number {
+    margin-top: 150px !important;
+  }
+
+  .go-to-title {
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--lightGray);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .question-list li {
+    font-size: 12px;
+  }
+  .progress-bar {
+    height: 30px !important;
+    margin-top: 20px !important;
+  }
+
+  #canvas {
+    width: 100%;
+    height: 50px !important;
+  }
+  .percentage {
+    margin: 8px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .quiz-con {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 70px;
+    margin-left: 40px !important;
+  }
+
+  .quiz-box {
+    width: 250px;
+    height: 350px;
+    margin-top: 10px;
+  }
+
+  .quiz-question {
+    font-size: 13px;
+    padding: 15px 15px 15px 20px;
+  }
+
+  .quiz-box form {
+    justify-content: flex-start;
+
+    height: 200px;
+    padding: 20px 0 0 20px;
+  }
+
+  .quiz-box label {
+    font-size: 14px;
+  }
+
+  .feedback-msg,
+  .show-wrong,
+  .show-correct,
+  .show-message {
+    font-size: 7px;
+    margin-left: 2px;
+  }
+
+  .option input[type="radio"] {
+    width: 10px;
+    height: 10px;
+  }
+
+  .option label {
+    font-size: 10px;
+  }
+
+  .feedback-msg {
+    margin-top: 20px !important;
+  }
+
+  #submit,
+  #nextButton {
+    font-size: 8px !important;
+    bottom: -30px;
+  }
+
+  .go-to-title {
+    font-size: 12px;
+  }
+
+  .question-list li a {
+    font-size: 9px;
+    padding: 3px 3px;
+  }
+
+  .progress-bar {
+    display: none !important;
+  }
+
+  #canvas {
+    display: none;
+  }
+}

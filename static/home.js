@@ -9,51 +9,54 @@ let frameNumberBoy2 = 5;
 let frameNumberBoy3 = 3;
 
 const boy = {
-  x: innerWidth - innerWidth / 2 - 450,
-  y: canvas.height - 430,
+  x:
+    canvas.width > 1024
+      ? innerWidth - innerWidth / 2 - 450
+      : innerWidth - innerWidth / 2 - 350,
+  y: canvas.height > 1229 ? canvas.height - 430 : canvas.height - 480,
   speed: 8,
-  w: 200,
-  h: 300,
+  w: canvas.width > 1024 ? 200 : 150,
+  h: canvas.height > 1229 ? 300 : 250,
   moving: false,
   dx: 0,
 };
 
 const girl1 = {
-  x: boy.x + 180,
-  y: canvas.height - 400,
+  x: canvas.width > 1024 ? boy.x + 180 : boy.x + 130,
+  y: canvas.height > 1229 ? canvas.height - 400 : canvas.height - 450,
   speed: 5,
-  w: 170,
-  h: 260,
+  w: canvas.width > 1024 ? 170 : 120,
+  h: canvas.width > 1024 ? 260 : 210,
   moving: false,
   dx: 0,
 };
 
 const girl2 = {
-  x: girl1.x + 170,
-  y: canvas.height - 390,
+  x: canvas.width > 1024 ? girl1.x + 170 : girl1.x + 120,
+  y: canvas.height > 1229 ? canvas.height - 390 : canvas.height - 440,
   speed: 5,
-  w: 150,
-  h: 240,
+  w: canvas.width > 1024 ? 150 : 100,
+  h: canvas.width > 1024 ? 240 : 190,
   moving: false,
   dx: 0,
 };
 
 const boy2 = {
-  x: girl2.x + 150,
-  y: canvas.height - 410,
+  x: canvas.width > 1024 ? girl2.x + 150 : girl2.x + 100,
+  y: canvas.height > 1229 ? canvas.height - 410 : canvas.height - 460,
   speed: 8,
-  w: 160,
-  h: 280,
+  w: canvas.width > 1024 ? 160 : 110,
+  h: canvas.width > 1024 ? 280 : 230,
   moving: false,
   dx: 0,
 };
 
 const girl3 = {
-  x: boy2.x + 160,
-  y: canvas.height - 400,
+  x: canvas.width > 1024 ? boy2.x + 160 : boy2.x + 110,
+  y: canvas.height > 1229 ? canvas.height - 400 : canvas.height - 450,
   speed: 5,
-  w: 140,
-  h: 260,
+  w: canvas.width > 1024 ? 140 : 90,
+  h: canvas.width > 1024 ? 260 : 210,
   moving: false,
   dx: 0,
 };
@@ -170,7 +173,11 @@ function handleMove() {
   if (frameNumberBoy2 == 4 || frameNumberBoy2 == 5) {
     $(".fun").css({
       left: `${girl2.x + 50}px`,
-      top: `${girl2.y - frameNumberBoy2 + 680}px`,
+      top: `${
+        canvas.width > 1024
+          ? girl2.y - frameNumberBoy2 + 680
+          : girl2.y - frameNumberBoy2 + 750
+      }px`,
     });
   } else if (
     frameNumberBoy2 == 7 ||
@@ -179,7 +186,11 @@ function handleMove() {
   ) {
     $(".fun").css({
       left: `${girl2.x + 50}px`,
-      top: `${girl2.y + frameNumberBoy2 + 680}px`,
+      top: `${
+        canvas.width > 1024
+          ? girl2.y + frameNumberBoy2 + 680
+          : girl2.y + frameNumberBoy2 + 750
+      }px`,
     });
   }
 }

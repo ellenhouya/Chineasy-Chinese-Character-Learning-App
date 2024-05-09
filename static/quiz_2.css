@@ -160,3 +160,199 @@
   width: 50px;
   padding: 0 0 0 10px;
 }
+
+@media (max-width: 1024px) {
+  .content-con {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #canvas {
+    width: 100%;
+    height: 50px !important;
+  }
+
+  .feedback {
+    font-size: 9px !important;
+  }
+
+  .question {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .content-con {
+    padding: 0 80px;
+    justify-content: space-between;
+  }
+
+  .images-con {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #nextButton {
+    font-size: 14px !important;
+    padding: 3px 5px !important;
+    left: 500px;
+    bottom: 200px;
+    width: 70px;
+    height: 40px;
+  }
+
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .progress-number {
+    margin-top: 150px !important;
+  }
+
+  .go-to-title {
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--lightGray);
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  .question-list li {
+    font-size: 12px;
+  }
+  .progress-bar {
+    height: 30px !important;
+    margin-top: 20px !important;
+  }
+
+  #canvas {
+    height: 50px !important;
+  }
+  .percentage {
+    margin: 8px !important;
+  }
+
+  .feedback-correct {
+    font-size: 17px;
+  }
+
+  .img-con img {
+    width: 120px;
+    height: 100px;
+    margin-bottom: 25px;
+  }
+
+  .droppable {
+    width: 140px;
+    height: 120px;
+    font-size: 23px;
+  }
+
+  .content-con {
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) and (min-height: 1025px) {
+  .feedback {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .question {
+    font-size: 13px;
+    text-align: left;
+    padding: 0 10px;
+    margin-bottom: 0;
+  }
+
+  .quiz-box form {
+    justify-content: flex-start;
+
+    height: 200px;
+    padding: 20px 0 0 20px;
+  }
+
+  .quiz-box label {
+    font-size: 14px;
+  }
+
+  .form-menu-con form label,
+  .feedback-msg,
+  .show-wrong,
+  .show-correct,
+  .show-message {
+    font-size: 8px;
+    margin-left: 2px;
+  }
+
+  .feedback-msg {
+    margin-top: 20px !important;
+  }
+
+  .feedback {
+    font-size: 7px !important;
+  }
+
+  #nextButton {
+    font-size: 8px !important;
+    bottom: -30px;
+  }
+
+  .go-to-title {
+    font-size: 12px;
+  }
+
+  .question-list li a {
+    font-size: 9px;
+    padding: 3px 3px;
+  }
+
+  .progress-bar {
+    display: none !important;
+  }
+
+  #canvas {
+    display: none;
+  }
+
+  .content-con {
+    margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .images-con {
+    height: 75%;
+  }
+
+  .img-con img {
+    width: 90px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .droppable {
+    width: 100px;
+    height: 80px;
+    font-size: 15px;
+  }
+
+  .droppable p {
+    margin-bottom: 0;
+  }
+
+  .feedback-correct,
+  .feedback-wrong {
+    font-size: 15px;
+  }
+}

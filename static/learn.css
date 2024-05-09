@@ -223,3 +223,132 @@ video:last-child {
 .swiper-pagination {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .evolution-con img {
+    width: 60px;
+    height: 70px;
+  }
+  video {
+    width: 100px;
+    height: 100px;
+  }
+
+  .character-review-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  .swiper-slide {
+    width: 80px !important;
+    height: 90px !important;
+  }
+
+  .slide-character-chi,
+  .slide-character-eng {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 768px) and (min-height: 1025px) {
+  .learning-con {
+    padding: 0 !important;
+  }
+
+  .btns-con {
+    top: 50vh;
+  }
+}
+
+@media (max-width: 430px) {
+  .evolution-con img {
+    width: 25px;
+    height: 40px;
+  }
+  .word {
+    font-size: 10px;
+  }
+
+  .character-info {
+    padding-left: 20px;
+  }
+
+  .character-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .char-evolution-title,
+  .char-stroke-title {
+    font-size: 12px;
+  }
+
+  video {
+    width: 70px;
+    height: 70px;
+  }
+
+  audio {
+    width: 200px;
+    height: 40px;
+  }
+
+  .learning-con {
+    padding: 0 10px !important;
+  }
+
+  .home-link,
+  .learn-link,
+  .quiz-link {
+    font-size: 10px !important;
+  }
+
+  .nav-bar {
+    justify-content: space-around !important;
+    width: 100% !important;
+    margin-left: 48px !important;
+  }
+
+  .nav-bar ul {
+    padding-left: 0 !important;
+    margin-right: 20px !important;
+  }
+
+  .nav-bar ul li {
+    margin-right: 10px !important;
+    width: 50px;
+  }
+
+  .brand {
+    font-size: 22px !important;
+  }
+
+  .character-review-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  .swiper-slide {
+    width: 70px !important;
+    height: 90px !important;
+    margin-right: 15px !important;
+  }
+
+  .slide-character-chi,
+  .slide-character-eng,
+  .character-review-title {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .previous-btn,
+  .next-btn {
+    font-size: 11px !important;
+  }
+
+  .btns-con {
+    position: relative !important;
+    top: -130px;
+    left: 10px;
+  }
+}

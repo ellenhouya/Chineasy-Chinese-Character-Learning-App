@@ -143,3 +143,48 @@ body {
 .quiz-link:hover {
   transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+  .nav-con {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .home-link,
+  .learn-link,
+  .quiz-link {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .progress-canvas-container {
+    height: 0px !important;
+    margin-bottom: 50px;
+  }
+
+  .home-link,
+  .learn-link,
+  .quiz-link {
+    font-size: 10px !important;
+  }
+
+  .nav-bar {
+    justify-content: space-around !important;
+    margin-left: 41px !important;
+  }
+
+  .nav-bar ul {
+    padding-left: 0 !important;
+    margin-right: 20px !important;
+  }
+
+  .nav-bar ul li {
+    margin-right: 10px !important;
+    width: 50px;
+  }
+
+  .brand {
+    font-size: 22px !important;
+  }
+}

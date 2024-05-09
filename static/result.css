@@ -135,3 +135,80 @@ ul {
 #home-btn:hover {
   transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+  .result-container {
+    max-width: 700px !important;
+  }
+
+  .score,
+  .knowledge h2,
+  .review h2 {
+    font-size: 20px;
+  }
+
+  .knowledge ul li,
+  .review ul li {
+    margin-top: 7px;
+    font-size: 14px;
+  }
+
+  .previous-btn,
+  .next-btn,
+  .home-link,
+  .learn-link,
+  .quiz-link,
+  #retry-quiz-btn,
+  #home-btn {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .result-container {
+    padding: 40px 10px 0 10px;
+  }
+
+  .home-link,
+  .learn-link,
+  .quiz-link {
+    font-size: 10px !important;
+  }
+
+  .nav-bar ul {
+    padding-left: 0 !important;
+    margin-right: 20px !important;
+  }
+
+  .nav-bar ul li {
+    margin-right: 10px !important;
+    width: 50px;
+  }
+
+  .brand {
+    font-size: 22px !important;
+  }
+
+  #retry-quiz-btn,
+  #home-btn {
+    font-size: 11px !important;
+    padding: 5px 10px;
+  }
+
+  .score,
+  .knowledge h2,
+  .review h2 {
+    font-size: 15px;
+  }
+
+  .knowledge ul,
+  .review ul {
+    padding-left: 15px;
+  }
+
+  .knowledge ul li,
+  .review ul li {
+    margin-top: 5px;
+    font-size: 11px;
+  }
+}
